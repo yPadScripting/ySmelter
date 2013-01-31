@@ -21,8 +21,6 @@ public class Variables {
     public static int FURNACE = 76293;
     public static int BANK = 76274;
     public static int RING_OF_FORGING = 2568;
-    // SILVER = 14;
-    // GOLD = 22;
     public static int[] BAR_WIDGETS = {2, 10, 18, 30, 34, 58, 22, 14};
     public static int SELECTED_ORE = 999999;
     public static Filter<Item> INV_FILTER = new Filter<Item>() {

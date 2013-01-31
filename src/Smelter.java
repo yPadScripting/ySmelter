@@ -98,7 +98,6 @@ public class Smelter extends ActiveScript implements MouseListener, PaintListene
             jobs.add(new WalkToFurnace());
             jobs.add(new Smelting());
             jobs.add(new WalkToBank());
-            // jobs.add(new Antiban2());
             container = new Tree(jobs.toArray(new Node[jobs.size()]));
         }
         return Random.nextInt(150, 250);
@@ -134,8 +133,7 @@ public class Smelter extends ActiveScript implements MouseListener, PaintListene
         Graphics2D g = (Graphics2D) g1;
 
         if (Game.getClientState() == 11) {
-            if (!hide) {
-                
+            if (!hide) {                
                 xpgained = Skills.getExperience(Skills.SMITHING) - startingxp;
                 double time = (double) runTime.getElapsed();
                 DecimalFormat barsmade = new DecimalFormat("#,###,###");
@@ -146,15 +144,9 @@ public class Smelter extends ActiveScript implements MouseListener, PaintListene
                 g.drawString("Status: " + "\n" + currentStatus, 7, 365); // Status
                 g.drawString(runTime.toElapsedString(), 350, 425); //Runtime
                 g.drawString(df.format((3600000 / time) * bars), 350, 450); //Ores per Hour
-                g.drawString(barsmade.format(bars), 350, 477); //Ores smelted
+                g.drawString(barsmade.format(bars), 350, 477); //Bars made
                 g.drawString(df.format(xpgained), 350, 505); //Exp Gained
-
                 g.drawImage(hidebuttondisabled, 497, 395, null);
-
-
-
-
-
             }
             if (hide) {
                 g.drawImage(hidebuttonenabled, 497, 395, null);
