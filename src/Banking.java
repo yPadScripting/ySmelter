@@ -91,8 +91,8 @@ public class Banking extends Node {
         }
 
         if (!Bank.isOpen()) {
-            bank.interact("Bank", "Bank booth");
             while (!Bank.isOpen()) {
+                bank.interact("Bank", "Bank booth");
                 sleep(Random.nextInt(750, 1500));
             }
         }
